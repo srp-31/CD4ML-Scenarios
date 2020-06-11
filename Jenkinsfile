@@ -4,6 +4,9 @@ pipeline {
         // Poll SCM every minute for new changes
         pollSCM('* * * * *')
     }
+    options{
+        timestamps()
+    }
 
     environment { 
         MLFLOW_TRACKING_URL = 'http://mlflow:5000'
@@ -12,7 +15,7 @@ pipeline {
         stage('Install dependencies') {
             steps {
                 echo 'Starting Build'
-                sh 'pip install -r requirements.txt'
+                sh 'pip3 install -r requirements.txt'
             }
         }
         stage('Run tests') {
