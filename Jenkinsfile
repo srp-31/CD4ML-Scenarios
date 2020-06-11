@@ -6,7 +6,7 @@ pipeline {
     }
     options {
        // add timestamps to output
-       timestamps()
+       //timestamps()
     }
     environment { 
         MLFLOW_TRACKING_URL = 'http://mlflow:5000'
